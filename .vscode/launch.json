@@ -1,0 +1,72 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb-openocd) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            //"preLaunchTask": "start openocd",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "targetArchitecture": "arm",
+            "MIMode": "gdb",
+            "program": "E:/VisualStudioCode/STM32F1_HAL/build/STM32F1_HAL.elf",
+            "miDebuggerPath": "E:/VisualStudioCode/gcc-arm-none-eabi/bin/arm-none-eabi-gdb.exe",
+            "setupCommands": [
+                {
+                    "text": "file 'E:/VisualStudioCode/STM32F1_HAL/build/STM32F1_HAL.elf'"
+                },
+                {
+                    "text": "target remote localhost:3333"
+                },
+                {
+                    "text": "monitor reset"
+                },
+                {
+                    "text": "monitor halt"
+                },
+                {
+                    "text": "load"
+                }
+            ]
+        },
+        {
+            "name": "(gdb-server) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            //"preLaunchTask": "start st-util",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "targetArchitecture": "arm",
+            "MIMode": "gdb",
+            "program": "E:/VisualStudioCode/STM32F1_HAL/build/STM32F1_HAL.elf",
+            "miDebuggerPath": "E:/VisualStudioCode/gcc-arm-none-eabi/bin/arm-none-eabi-gdb.exe",
+            "setupCommands": [
+                {
+                    "text": "file 'E:/VisualStudioCode/STM32F1_HAL/build/STM32F1_HAL.elf'"
+                },
+                {
+                    "text": "target remote localhost:4242"
+                },
+                {
+                    "text": "monitor reset"
+                },
+                {
+                    "text": "monitor halt"
+                },
+                {
+                    "text": "load"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "option": [
+                "Og",
+                "Wall",
+                "fdata-sections",
+                "ffunction-sections",
+                "g",
+                "gdwarf-2",
+                "MMD",
+                "MP",
+                ""
+            ],
+            "path": [
+                {
+                    "compiler": "E:/VisualStudioCode/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe",
+                    "objcopy": "E:/VisualStudioCode/gcc-arm-none-eabi/bin/arm-none-eabi-objcopy.exe",
+                    "startup_file": "${workspaceFolder}\\Drivers\\startup_stm32f103xb.s",
+                    "ld_script_file": "${workspaceFolder}\\Drivers\\STM32F103C8Tx_FLASH.ld",
+                    "out_path": "${workspaceFolder}\\build\\",
+                    "out_name": "STM32F1_HAL"
+                }
+            ],
+            "includePath": [
+                "${workspaceFolder}/App",
+                "${workspaceFolder}/Src/Inc",
+                "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "E:/VisualStudioCode/gcc-arm-none-eabi/arm-none-eabi/include",
+                "E:/VisualStudioCode/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.2.1/include",
+                ""
+            ],
+            "sources": [
+                {
+                    "user": [
+                        "${workspaceFolder}\\APP\\main.cpp",
+                        "${workspaceFolder}\\Src\\i2c.c",
+                        "${workspaceFolder}\\Src\\usart.c",
+                        "${workspaceFolder}\\Src\\stm32f1xx_hal_msp.c",
+                        "${workspaceFolder}\\Src\\stm32f1xx_it.c",
+                        "${workspaceFolder}\\Src\\system_stm32f1xx.c",
+                        ""
+                    ],
+                    "driver": [
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_i2c.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_cortex.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_dma.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc_ex.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_rcc.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash_ex.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_tim_ex.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_pwr.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_gpio_ex.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_uart.c",
+                        "${workspaceFolder}\\Drivers\\STM32F1xx_HAL_Driver\\Src\\stm32f1xx_hal_flash.c",
+                        ""
+                    ]
+                }
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32F103xB"
+            ],
+            "mcu": [
+                "mcpu=cortex-m3",
+                "mthumb"
+            ],
+            "browse": {
+                "path": [
+                    ""
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,75 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "upload",
+            "type": "shell",
+            "command": "C:/Anaconda3/python.exe",
+            "args": [
+                "${workspaceFolder}/tools/Upload.py",
+                "${workspaceFolder}/tools/stlink",
+                "${workspaceFolder}\\build\\STM32F1_HAL.hex"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "build-debug-user",
+            "type": "shell",
+            "command": "C:/Anaconda3/python.exe",
+            "args": [
+                "${workspaceFolder}/tools/ARM_Build.py",
+                "${workspaceFolder}/.vscode/c_cpp_properties.json",
+                "${workspaceFolder}",
+                "user"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build-debug-all",
+            "type": "shell",
+            "command": "C:/Anaconda3/python.exe",
+            "args": [
+                "${workspaceFolder}/tools/ARM_Build.py",
+                "${workspaceFolder}/.vscode/c_cpp_properties.json",
+                "${workspaceFolder}",
+                "all"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "start openocd",
+            "type": "shell",
+            "command": "C:/Anaconda3/python.exe",
+            "args": [
+                "${workspaceFolder}/tools/OpenOCD.py",
+                "${workspaceFolder}/tools/openocd"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "start st-util",
+            "type": "shell",
+            "command": "${workspaceFolder}/tools/stlink/st-util.exe",
+            "args": [],
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+        },
+    ]
+}
