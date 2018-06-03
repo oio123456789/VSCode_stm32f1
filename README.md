@@ -1,0 +1,2 @@
+# vscode_stm32f1
+这是一个基于GCC编译器的VisualStudioCode stm32f103 项目
