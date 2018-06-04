@@ -3,6 +3,7 @@
         {
             "name": "Win32",
             "option": [
+                "std=c++11",
                 "Og",
                 "Wall",
                 "fdata-sections",
@@ -13,12 +14,15 @@
                 "MP",
                 ""
             ],
+            "link_option": [
+                "specs=nano.specs",
+                "specs=nosys.specs",
+                "u _printf_float"
+            ],
             "path": [
                 {
                     "compiler": "E:/VisualStudioCode/gcc-arm-none-eabi/bin/arm-none-eabi-g++.exe",
                     "objcopy": "E:/VisualStudioCode/gcc-arm-none-eabi/bin/arm-none-eabi-objcopy.exe",
-                    "startup_file": "${workspaceFolder}\\Drivers\\startup_stm32f103xb.s",
-                    "ld_script_file": "${workspaceFolder}\\Drivers\\STM32F103C8Tx_FLASH.ld",
                     "out_path": "${workspaceFolder}\\build\\",
                     "out_name": "STM32F1_HAL"
                 }
@@ -30,13 +34,18 @@
                 "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
                 "${workspaceFolder}/Drivers/CMSIS/Include",
                 "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
-                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
                 "E:/VisualStudioCode/gcc-arm-none-eabi/arm-none-eabi/include",
                 "E:/VisualStudioCode/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.2.1/include",
                 ""
             ],
             "sources": [
                 {
+                    "startup_file": "${workspaceFolder}\\Drivers\\startup_stm32f103xb.s",
+                    "ld_script_file": "${workspaceFolder}\\Drivers\\STM32F103C8Tx_FLASH.ld",
+                    "libarm": [
+                        "${workspaceFolder}\\Drivers\\CMSIS\\Lib\\GCC\\libarm_cortexM3l_math.a",
+                        ""
+                    ],
                     "user": [
                         "${workspaceFolder}\\APP\\main.cpp",
                         "${workspaceFolder}\\Src\\i2c.c",
@@ -66,6 +75,7 @@
                 }
             ],
             "defines": [
+                "ARM_MATH_CM3",
                 "USE_HAL_DRIVER",
                 "STM32F103xB"
             ],

@@ -14,9 +14,11 @@ class ArmBuild:
     sources = []
     user_sources = []
     diver_sources = []
+    libarm = []
 
-    option = []
     x_option = ""
+    option = []
+    link_option = []
 
     compiler = ""
     objcopy = ""
@@ -106,8 +108,18 @@ class ArmBuild:
         # command += " -mcpu=cortex-m3 -mthumb"
         for item in self.mcu:
             command += " -" + item
-        command += " -specs=nano.specs"
-        command += " -specs=nosys.specs"
+
+        for item in self.link_option:
+            command += " -" + item
+        # link option
+        # command += " -specs=nano.specs"
+        # command += " -specs=nosys.specs"
+        # command += " -u _printf_float"
+        # command += " -u _scanf_float"
+
+        for item in self.libarm:
+            command += " " + item
+
         command += " -T" + "\"" + self.ld_script_file + "\""
         command += " -lc -lm -lnosys"
         command += " -Wl,-Map="
@@ -141,24 +153,31 @@ class ArmBuild:
 
         path = configurations["path"][0]
         option = configurations["option"]
+        link_option = configurations["link_option"]
+
         include = configurations["includePath"]
-        #sources = configurations["sources"]
+        # sources = configurations["sources"]
         defines = configurations["defines"]
         mcu = configurations["mcu"]
 
         user = configurations["sources"][0]["user"]
         driver = configurations["sources"][0]["driver"]
+        libarm = configurations["sources"][0]["libarm"]
+
+        self.startup_file = configurations["sources"][0]["startup_file"]
+        self.ld_script_file = configurations["sources"][0]["ld_script_file"]
 
         self.compiler = path["compiler"]
         self.objcopy = path["objcopy"]
-        self.startup_file = path["startup_file"]
-        self.ld_script_file = path["ld_script_file"]
         self.out_path = path["out_path"]
         self.out_name = path["out_name"]
 
         for item in option:
             if(len(item) > 0):
                 self.option.append(item)
+        for item in link_option:
+            if(len(item) > 0):
+                self.link_option.append(item)
         for item in defines:
             if(len(item) > 0):
                 self.defs.append(item)
@@ -174,17 +193,20 @@ class ArmBuild:
         for item in driver:
             if(len(item) > 0):
                 self.diver_sources.append(item)
+        for item in libarm:
+            if(len(item) > 0):
+                self.libarm.append(item)
 
 
 # -----------------------------------------------------------------------
 
 
-def run(option="all", json_path=""):
+def run(json_path="", option="all"):
     # ---------------------------------------------------------------------------------------
     arm = ArmBuild()
     cur_path = os.path.abspath(os.path.curdir)
     # ---------------------------------------------------------------------------------------
-    #file_path = ".vscode/c_cpp_properties.json"
+    # file_path = ".vscode/c_cpp_properties.json"
     file_path = json_path
     with open(file_path, 'r') as file:
         text_body = file.read()
@@ -208,7 +230,7 @@ def run(option="all", json_path=""):
     print("compiler user sources file")
     arm.compiler_user_sources_files()
 
-    print("compiler elf file")
+    print("compiler to elf file")
     arm.compiler_to_elf_file()
     print("generate .bin .hex file")
     arm.compiler_elf_file()
@@ -216,7 +238,7 @@ def run(option="all", json_path=""):
 
 if __name__ == '__main__':
     print("start build")
-    option = "all"
+    #option = "all"
     json_path = ""
     if(len(sys.argv) > 2):
         json_path = sys.argv[1]
@@ -225,5 +247,5 @@ if __name__ == '__main__':
             option = sys.argv[3]
     else:
         exit()
-    run(option, json_path)
+    run(json_path, option)
     print("end build")

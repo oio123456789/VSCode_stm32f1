@@ -1,0 +1,277 @@
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f1xx_hal_gpio_ex.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.HAL_GPIOEx_ConfigEventout,"ax",%progbits
+  16              		.align	1
+  17              		.global	HAL_GPIOEx_ConfigEventout
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	HAL_GPIOEx_ConfigEventout:
+  24              		.fnstart
+  25              	.LFB64:
+  26              		.file 1 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c"
+   1:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /**
+   2:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ******************************************************************************
+   3:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @file    stm32f1xx_hal_gpio_ex.c
+   4:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @author  MCD Application Team
+   5:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @brief   GPIO Extension HAL module driver.
+   6:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *         This file provides firmware functions to manage the following
+   7:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *          functionalities of the General Purpose Input/Output (GPIO) extension peripheral.
+   8:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *           + Extended features functions
+   9:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *
+  10:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   @verbatim
+  11:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ==============================================================================
+  12:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****                     ##### GPIO Peripheral extension features #####
+  13:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ==============================================================================
+  14:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   [..] GPIO module on STM32F1 family, manage also the AFIO register:
+  15:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****        (+) Possibility to use the EVENTOUT Cortex feature
+  16:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  17:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****                      ##### How to use this driver #####
+  18:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ==============================================================================
+  19:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   [..] This driver provides functions to use EVENTOUT Cortex feature
+  20:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****     (#) Configure EVENTOUT Cortex feature using the function HAL_GPIOEx_ConfigEventout()
+  21:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****     (#) Activate EVENTOUT Cortex feature using the HAL_GPIOEx_EnableEventout()
+  22:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****     (#) Deactivate EVENTOUT Cortex feature using the HAL_GPIOEx_DisableEventout()
+  23:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  24:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   @endverbatim
+  25:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ******************************************************************************
+  26:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @attention
+  27:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *
+  28:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  29:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *
+  30:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * Redistribution and use in source and binary forms, with or without modification,
+  31:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * are permitted provided that the following conditions are met:
+  32:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *   1. Redistributions of source code must retain the above copyright notice,
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s 			page 2
+
+
+  33:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *      this list of conditions and the following disclaimer.
+  34:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  35:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *      this list of conditions and the following disclaimer in the documentation
+  36:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *      and/or other materials provided with the distribution.
+  37:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  38:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *      may be used to endorse or promote products derived from this software
+  39:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *      without specific prior written permission.
+  40:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *
+  41:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  42:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  43:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  44:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  45:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  46:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  47:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  48:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  49:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  50:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  51:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *
+  52:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ******************************************************************************
+  53:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+  54:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  55:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /* Includes ------------------------------------------------------------------*/
+  56:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** #include "stm32f1xx_hal.h"
+  57:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  58:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /** @addtogroup STM32F1xx_HAL_Driver
+  59:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @{
+  60:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+  61:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  62:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /** @defgroup GPIOEx GPIOEx
+  63:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @brief GPIO HAL module driver
+  64:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @{
+  65:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+  66:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  67:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** #ifdef HAL_GPIO_MODULE_ENABLED
+  68:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  69:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /** @defgroup GPIOEx_Exported_Functions GPIOEx Exported Functions
+  70:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @{
+  71:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+  72:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  73:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /** @defgroup GPIOEx_Exported_Functions_Group1 Extended features functions
+  74:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****  *  @brief    Extended features functions
+  75:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****  *
+  76:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** @verbatim
+  77:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ==============================================================================
+  78:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****                  ##### Extended features functions #####
+  79:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   ==============================================================================
+  80:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****     [..]  This section provides functions allowing to:
+  81:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****     (+) Configure EVENTOUT Cortex feature using the function HAL_GPIOEx_ConfigEventout()
+  82:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****     (+) Activate EVENTOUT Cortex feature using the HAL_GPIOEx_EnableEventout()
+  83:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****     (+) Deactivate EVENTOUT Cortex feature using the HAL_GPIOEx_DisableEventout()
+  84:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  85:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** @endverbatim
+  86:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @{
+  87:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+  88:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+  89:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /**
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s 			page 3
+
+
+  90:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @brief  Configures the port and pin on which the EVENTOUT Cortex signal will be connected.
+  91:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @param  GPIO_PortSource Select the port used to output the Cortex EVENTOUT signal.
+  92:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *   This parameter can be a value of @ref GPIOEx_EVENTOUT_PORT.
+  93:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @param  GPIO_PinSource Select the pin used to output the Cortex EVENTOUT signal.
+  94:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   *   This parameter can be a value of @ref GPIOEx_EVENTOUT_PIN.
+  95:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @retval None
+  96:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+  97:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** void HAL_GPIOEx_ConfigEventout(uint32_t GPIO_PortSource, uint32_t GPIO_PinSource)
+  98:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** {
+  27              		.loc 1 98 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  99:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   /* Verify the parameters */
+ 100:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   assert_param(IS_AFIO_EVENTOUT_PORT(GPIO_PortSource));
+ 101:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   assert_param(IS_AFIO_EVENTOUT_PIN(GPIO_PinSource));
+ 102:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+ 103:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   /* Apply the new configuration */
+ 104:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   MODIFY_REG(AFIO->EVCR, (AFIO_EVCR_PORT) | (AFIO_EVCR_PIN), (GPIO_PortSource) | (GPIO_PinSource));
+  33              		.loc 1 104 0
+  34 0000 034A     		ldr	r2, .L2
+  35 0002 1368     		ldr	r3, [r2]
+  36 0004 23F07F03 		bic	r3, r3, #127
+  37 0008 0143     		orrs	r1, r1, r0
+  38              	.LVL1:
+  39 000a 0B43     		orrs	r3, r3, r1
+  40 000c 1360     		str	r3, [r2]
+ 105:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** }
+  41              		.loc 1 105 0
+  42 000e 7047     		bx	lr
+  43              	.L3:
+  44              		.align	2
+  45              	.L2:
+  46 0010 00000140 		.word	1073807360
+  47              		.cfi_endproc
+  48              	.LFE64:
+  49              		.cantunwind
+  50              		.fnend
+  52              		.section	.text.HAL_GPIOEx_EnableEventout,"ax",%progbits
+  53              		.align	1
+  54              		.global	HAL_GPIOEx_EnableEventout
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  58              		.fpu softvfp
+  60              	HAL_GPIOEx_EnableEventout:
+  61              		.fnstart
+  62              	.LFB65:
+ 106:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+ 107:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /**
+ 108:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @brief  Enables the Event Output.
+ 109:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @retval None
+ 110:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+ 111:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** void HAL_GPIOEx_EnableEventout(void)
+ 112:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** {
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s 			page 4
+
+
+  63              		.loc 1 112 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+ 113:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   SET_BIT(AFIO->EVCR, AFIO_EVCR_EVOE);
+  68              		.loc 1 113 0
+  69 0000 024A     		ldr	r2, .L5
+  70 0002 1368     		ldr	r3, [r2]
+  71 0004 43F08003 		orr	r3, r3, #128
+  72 0008 1360     		str	r3, [r2]
+ 114:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** }
+  73              		.loc 1 114 0
+  74 000a 7047     		bx	lr
+  75              	.L6:
+  76              		.align	2
+  77              	.L5:
+  78 000c 00000140 		.word	1073807360
+  79              		.cfi_endproc
+  80              	.LFE65:
+  81              		.cantunwind
+  82              		.fnend
+  84              		.section	.text.HAL_GPIOEx_DisableEventout,"ax",%progbits
+  85              		.align	1
+  86              		.global	HAL_GPIOEx_DisableEventout
+  87              		.syntax unified
+  88              		.thumb
+  89              		.thumb_func
+  90              		.fpu softvfp
+  92              	HAL_GPIOEx_DisableEventout:
+  93              		.fnstart
+  94              	.LFB66:
+ 115:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** 
+ 116:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** /**
+ 117:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @brief  Disables the Event Output.
+ 118:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   * @retval None
+ 119:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   */
+ 120:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** void HAL_GPIOEx_DisableEventout(void)
+ 121:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** {
+  95              		.loc 1 121 0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99              		@ link register save eliminated.
+ 122:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c ****   CLEAR_BIT(AFIO->EVCR, AFIO_EVCR_EVOE);
+ 100              		.loc 1 122 0
+ 101 0000 024A     		ldr	r2, .L8
+ 102 0002 1368     		ldr	r3, [r2]
+ 103 0004 23F08003 		bic	r3, r3, #128
+ 104 0008 1360     		str	r3, [r2]
+ 123:E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Src\stm32f1xx_hal_gpio_ex.c **** }
+ 105              		.loc 1 123 0
+ 106 000a 7047     		bx	lr
+ 107              	.L9:
+ 108              		.align	2
+ 109              	.L8:
+ 110 000c 00000140 		.word	1073807360
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s 			page 5
+
+
+ 111              		.cfi_endproc
+ 112              	.LFE66:
+ 113              		.cantunwind
+ 114              		.fnend
+ 116              		.text
+ 117              	.Letext0:
+ 118              		.file 2 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\machine\\_default_types.
+ 119              		.file 3 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 120              		.file 4 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Include/core_cm3.h"
+ 121              		.file 5 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1x
+ 122              		.file 6 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 123              		.file 7 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\lock.h"
+ 124              		.file 8 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\_types.h"
+ 125              		.file 9 "e:\\visualstudiocode\\gcc-arm-none-eabi\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\stddef.
+ 126              		.file 10 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\reent.h"
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f1xx_hal_gpio_ex.c
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:16     .text.HAL_GPIOEx_ConfigEventout:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:23     .text.HAL_GPIOEx_ConfigEventout:00000000 HAL_GPIOEx_ConfigEventout
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:46     .text.HAL_GPIOEx_ConfigEventout:00000010 $d
+.ARM.exidx.text.HAL_GPIOEx_ConfigEventout:00000000 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:53     .text.HAL_GPIOEx_EnableEventout:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:60     .text.HAL_GPIOEx_EnableEventout:00000000 HAL_GPIOEx_EnableEventout
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:78     .text.HAL_GPIOEx_EnableEventout:0000000c $d
+.ARM.exidx.text.HAL_GPIOEx_EnableEventout:00000000 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:85     .text.HAL_GPIOEx_DisableEventout:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:92     .text.HAL_GPIOEx_DisableEventout:00000000 HAL_GPIOEx_DisableEventout
+C:\Users\ADMINI~1\AppData\Local\Temp\ccKPCmKx.s:110    .text.HAL_GPIOEx_DisableEventout:0000000c $d
+.ARM.exidx.text.HAL_GPIOEx_DisableEventout:00000000 $d
+
+NO UNDEFINED SYMBOLS

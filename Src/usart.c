@@ -50,20 +50,16 @@ extern "C"
 {
 #endif
 
-//Using printf Send data through serial port
-#ifdef __GNUC__
-  //With GCC, small printf (option LD Linker->Libraries->Small printf
-  //   set to 'Yes') calls __io_putchar()
+  //Using printf float Send data through serial port
+  //With GCC Link option -u _printf_float
 
   int _write(int file, char *data, int len)
   {
-    //Place your implementation of fputc here
-    //e.g. write a character to the USART1 and Loop until the end of transmission
     //HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
     uint8_t state = HAL_UART_Transmit(&huart1, (uint8_t *)data, len, 1000);
     return state;
   }
-#else
+
   int fputc(int ch, FILE *f)
   {
     //Place your implementation of fputc here
@@ -71,7 +67,6 @@ extern "C"
     HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
     return ch;
   }
-#endif // __GNUC__
 
 #ifdef __cplusplus
 }

@@ -40,6 +40,7 @@ int main(void)
 void test0()
 {
 
+  float f = 0u;
   uint8_t data[200];
   while (1)
   {
@@ -48,6 +49,9 @@ void test0()
     printf("printf test\r\n");
     serial("serial test\r\n");
 
+    printf("printf int %4d float %4.6f\r\n", (int)f, f);
+    serial("serial int %4d float %4.6f\r\n", (int)f, f);
+    f += 0.000001;
     if (HAL_UART_Receive_DMA(&huart1, data, 198) == HAL_OK)
     {
       //printf("HAL_UART_Receive_DMA\r\n%s\r\n", data);
