@@ -46,9 +46,6 @@ void test0()
   {
     LED_CHANGE;
     HAL_Delay(100);
-    printf("printf test\r\n");
-    serial("serial test\r\n");
-
     printf("printf int %4d float %4.6f\r\n", (int)f, f);
     serial("serial int %4d float %4.6f\r\n", (int)f, f);
     f += 0.000001;

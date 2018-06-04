@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 1
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 1
   30:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
   31:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
   32:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 2
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 2
 
 
   33:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
@@ -81,14 +81,12 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 1
   50:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
   51:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #endif
   52:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  53:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** //Using printf Send data through serial port
-  54:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #ifdef __GNUC__
-  55:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   //With GCC, small printf (option LD Linker->Libraries->Small printf
-  56:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   //   set to 'Yes') calls __io_putchar()
-  57:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  58:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   int _write(int file, char *data, int len)
-  59:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
-  27              		.loc 1 59 0
+  53:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   //Using printf float Send data through serial port
+  54:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   //With GCC Link option -u _printf_float
+  55:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  56:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   int _write(int file, char *data, int len)
+  57:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
+  27              		.loc 1 57 0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -99,11 +97,9 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 1
   35              		.cfi_def_cfa_offset 8
   36              		.cfi_offset 3, -8
   37              		.cfi_offset 14, -4
-  60:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //Place your implementation of fputc here
-  61:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //e.g. write a character to the USART1 and Loop until the end of transmission
-  62:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
-  63:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     uint8_t state = HAL_UART_Transmit(&huart1, (uint8_t *)data, len, 1000);
-  38              		.loc 1 63 0
+  58:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
+  59:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     uint8_t state = HAL_UART_Transmit(&huart1, (uint8_t *)data, len, 1000);
+  38              		.loc 1 59 0
   39 0002 4FF47A73 		mov	r3, #1000
   40 0006 92B2     		uxth	r2, r2
   41              	.LVL1:
@@ -111,564 +107,619 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 1
   43              	.LVL2:
   44 000a FFF7FEFF 		bl	HAL_UART_Transmit
   45              	.LVL3:
-  64:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     return state;
-  65:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
-  46              		.loc 1 65 0
+  60:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     return state;
+  61:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
+  46              		.loc 1 61 0
   47 000e 08BD     		pop	{r3, pc}
   48              	.L4:
   49              		.align	2
   50              	.L3:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 3
-
-
   51 0010 00000000 		.word	.LANCHOR0
   52              		.cfi_endproc
   53              	.LFE64:
   54              		.fnend
-  56              		.section	.text.HAL_UART_MspInit,"ax",%progbits
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 3
+
+
+  56              		.section	.text.fputc,"ax",%progbits
   57              		.align	1
-  58              		.global	HAL_UART_MspInit
+  58              		.global	fputc
   59              		.syntax unified
   60              		.thumb
   61              		.thumb_func
   62              		.fpu softvfp
-  64              	HAL_UART_MspInit:
+  64              	fputc:
   65              		.fnstart
-  66              	.LFB66:
-  66:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #else
-  67:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   int fputc(int ch, FILE *f)
-  68:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
-  69:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //Place your implementation of fputc here
-  70:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //e.g. write a character to the USART1 and Loop until the end of transmission
-  71:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
-  72:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     return ch;
-  73:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
-  74:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #endif // __GNUC__
-  75:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  76:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #ifdef __cplusplus
-  77:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
-  78:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #endif
-  79:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  80:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** /* USER CODE END 0 */
-  81:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  82:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** UART_HandleTypeDef huart1;
-  83:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** DMA_HandleTypeDef hdma_usart1_rx;
-  84:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  85:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** /* USART1 init function */
-  86:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  87:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void MX_USART1_UART_Init(uint32_t baudRate)
-  88:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
-  89:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   MX_UART_DMA_Init();
-  90:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Instance = USART1;
-  91:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.BaudRate = baudRate;
-  92:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.WordLength = UART_WORDLENGTH_8B;
-  93:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.StopBits = UART_STOPBITS_1;
-  94:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Parity = UART_PARITY_NONE;
-  95:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Mode = UART_MODE_TX_RX;
-  96:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  97:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
-  98:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (HAL_UART_Init(&huart1) != HAL_OK)
-  99:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
- 100:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //_Error_Handler(__FILE__, __LINE__);
- 101:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
- 102:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
- 103:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 104:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void HAL_UART_MspInit(UART_HandleTypeDef *uartHandle)
- 105:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
-  67              		.loc 1 105 0
+  66              	.LFB65:
+  62:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  63:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   int fputc(int ch, FILE *f)
+  64:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
+  67              		.loc 1 64 0
   68              		.cfi_startproc
-  69              		@ args = 0, pretend = 0, frame = 24
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 4
-
-
+  69              		@ args = 0, pretend = 0, frame = 8
   70              		@ frame_needed = 0, uses_anonymous_args = 0
   71              	.LVL4:
-  72              	.LBB2:
+  72 0000 00B5     		push	{lr}
+  73              		.save {lr}
+  74              	.LCFI1:
+  75              		.cfi_def_cfa_offset 4
+  76              		.cfi_offset 14, -4
+  77              		.pad #12
+  78 0002 83B0     		sub	sp, sp, #12
+  79              	.LCFI2:
+  80              		.cfi_def_cfa_offset 16
+  81 0004 02A9     		add	r1, sp, #8
+  82              	.LVL5:
+  83 0006 41F8040D 		str	r0, [r1, #-4]!
+  65:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //Place your implementation of fputc here
+  66:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //e.g. write a character to the USART1 and Loop until the end of transmission
+  67:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
+  84              		.loc 1 67 0
+  85 000a 4FF6FF73 		movw	r3, #65535
+  86 000e 0122     		movs	r2, #1
+  87 0010 0348     		ldr	r0, .L7
+  88              	.LVL6:
+  89 0012 FFF7FEFF 		bl	HAL_UART_Transmit
+  90              	.LVL7:
+  68:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     return ch;
+  69:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
+  91              		.loc 1 69 0
+  92 0016 0198     		ldr	r0, [sp, #4]
+  93 0018 03B0     		add	sp, sp, #12
+  94              	.LCFI3:
+  95              		.cfi_def_cfa_offset 4
+  96              		@ sp needed
+  97 001a 5DF804FB 		ldr	pc, [sp], #4
+  98              	.L8:
+  99 001e 00BF     		.align	2
+ 100              	.L7:
+ 101 0020 00000000 		.word	.LANCHOR0
+ 102              		.cfi_endproc
+ 103              	.LFE65:
+ 104              		.fnend
+ 106              		.section	.text.HAL_UART_MspInit,"ax",%progbits
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 4
+
+
+ 107              		.align	1
+ 108              		.global	HAL_UART_MspInit
+ 109              		.syntax unified
+ 110              		.thumb
+ 111              		.thumb_func
+ 112              		.fpu softvfp
+ 114              	HAL_UART_MspInit:
+ 115              		.fnstart
+ 116              	.LFB67:
+  70:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  71:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #ifdef __cplusplus
+  72:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
+  73:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** #endif
+  74:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  75:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** /* USER CODE END 0 */
+  76:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  77:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** UART_HandleTypeDef huart1;
+  78:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** DMA_HandleTypeDef hdma_usart1_rx;
+  79:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  80:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** /* USART1 init function */
+  81:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  82:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void MX_USART1_UART_Init(uint32_t baudRate)
+  83:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
+  84:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   MX_UART_DMA_Init();
+  85:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Instance = USART1;
+  86:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.BaudRate = baudRate;
+  87:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  88:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.StopBits = UART_STOPBITS_1;
+  89:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Parity = UART_PARITY_NONE;
+  90:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Mode = UART_MODE_TX_RX;
+  91:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  92:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  93:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (HAL_UART_Init(&huart1) != HAL_OK)
+  94:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
+  95:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     //_Error_Handler(__FILE__, __LINE__);
+  96:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
+  97:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
+  98:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+  99:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void HAL_UART_MspInit(UART_HandleTypeDef *uartHandle)
+ 100:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
+ 117              		.loc 1 100 0
+ 118              		.cfi_startproc
+ 119              		@ args = 0, pretend = 0, frame = 24
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121              	.LVL8:
+ 122              	.LBB2:
+ 101:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 102:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   GPIO_InitTypeDef GPIO_InitStruct;
+ 103:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (uartHandle->Instance == USART1)
+ 123              		.loc 1 103 0
+ 124 0000 0268     		ldr	r2, [r0]
+ 125 0002 214B     		ldr	r3, .L16
+ 126 0004 9A42     		cmp	r2, r3
+ 127 0006 00D0     		beq	.L15
+ 128 0008 7047     		bx	lr
+ 129              	.L15:
+ 130              	.LBE2:
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 5
+
+
+ 100:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 131              		.loc 1 100 0
+ 132 000a 70B5     		push	{r4, r5, r6, lr}
+ 133              		.save {r4, r5, r6, lr}
+ 134              	.LCFI4:
+ 135              		.cfi_def_cfa_offset 16
+ 136              		.cfi_offset 4, -16
+ 137              		.cfi_offset 5, -12
+ 138              		.cfi_offset 6, -8
+ 139              		.cfi_offset 14, -4
+ 140              		.pad #24
+ 141 000c 86B0     		sub	sp, sp, #24
+ 142              	.LCFI5:
+ 143              		.cfi_def_cfa_offset 40
+ 144 000e 0546     		mov	r5, r0
+ 145              	.LBB6:
+ 146              	.LBB3:
+ 147              	.LBB4:
+ 104:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
+ 105:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspInit 0 */
  106:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 107:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   GPIO_InitTypeDef GPIO_InitStruct;
- 108:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (uartHandle->Instance == USART1)
-  73              		.loc 1 108 0
-  74 0000 0268     		ldr	r2, [r0]
-  75 0002 214B     		ldr	r3, .L12
-  76 0004 9A42     		cmp	r2, r3
-  77 0006 00D0     		beq	.L11
-  78 0008 7047     		bx	lr
-  79              	.L11:
-  80              	.LBE2:
- 105:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
-  81              		.loc 1 105 0
-  82 000a 70B5     		push	{r4, r5, r6, lr}
-  83              		.save {r4, r5, r6, lr}
-  84              	.LCFI1:
-  85              		.cfi_def_cfa_offset 16
-  86              		.cfi_offset 4, -16
-  87              		.cfi_offset 5, -12
-  88              		.cfi_offset 6, -8
-  89              		.cfi_offset 14, -4
-  90              		.pad #24
-  91 000c 86B0     		sub	sp, sp, #24
-  92              	.LCFI2:
-  93              		.cfi_def_cfa_offset 40
-  94 000e 0546     		mov	r5, r0
-  95              	.LBB6:
-  96              	.LBB3:
-  97              	.LBB4:
- 109:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
- 110:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspInit 0 */
- 111:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 112:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspInit 0 */
- 113:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1 clock enable */
- 114:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_RCC_USART1_CLK_ENABLE();
-  98              		.loc 1 114 0
-  99 0010 03F55843 		add	r3, r3, #55296
- 100 0014 9A69     		ldr	r2, [r3, #24]
- 101 0016 42F48042 		orr	r2, r2, #16384
- 102 001a 9A61     		str	r2, [r3, #24]
- 103 001c 9A69     		ldr	r2, [r3, #24]
- 104 001e 02F48042 		and	r2, r2, #16384
- 105 0022 0092     		str	r2, [sp]
- 106 0024 009A     		ldr	r2, [sp]
- 107              	.LBE4:
- 108              	.LBB5:
- 115:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_RCC_GPIOA_CLK_ENABLE();
- 109              		.loc 1 115 0
- 110 0026 9A69     		ldr	r2, [r3, #24]
- 111 0028 42F00402 		orr	r2, r2, #4
- 112 002c 9A61     		str	r2, [r3, #24]
- 113 002e 9B69     		ldr	r3, [r3, #24]
- 114 0030 03F00403 		and	r3, r3, #4
- 115 0034 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 5
+ 107:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspInit 0 */
+ 108:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1 clock enable */
+ 109:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_RCC_USART1_CLK_ENABLE();
+ 148              		.loc 1 109 0
+ 149 0010 03F55843 		add	r3, r3, #55296
+ 150 0014 9A69     		ldr	r2, [r3, #24]
+ 151 0016 42F48042 		orr	r2, r2, #16384
+ 152 001a 9A61     		str	r2, [r3, #24]
+ 153 001c 9A69     		ldr	r2, [r3, #24]
+ 154 001e 02F48042 		and	r2, r2, #16384
+ 155 0022 0092     		str	r2, [sp]
+ 156 0024 009A     		ldr	r2, [sp]
+ 157              	.LBE4:
+ 158              	.LBB5:
+ 110:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_RCC_GPIOA_CLK_ENABLE();
+ 159              		.loc 1 110 0
+ 160 0026 9A69     		ldr	r2, [r3, #24]
+ 161 0028 42F00402 		orr	r2, r2, #4
+ 162 002c 9A61     		str	r2, [r3, #24]
+ 163 002e 9B69     		ldr	r3, [r3, #24]
+ 164 0030 03F00403 		and	r3, r3, #4
+ 165 0034 0193     		str	r3, [sp, #4]
+ 166 0036 019B     		ldr	r3, [sp, #4]
+ 167              	.LBE5:
+ 111:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /**USART1 GPIO Configuration    
+ 112:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA9     ------> USART1_TX
+ 113:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA10     ------> USART1_RX 
+ 114:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     */
+ 115:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Pin = GPIO_PIN_9;
+ 168              		.loc 1 115 0
+ 169 0038 4FF40073 		mov	r3, #512
+ 170 003c 0293     		str	r3, [sp, #8]
+ 116:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 171              		.loc 1 116 0
+ 172 003e 0223     		movs	r3, #2
+ 173 0040 0393     		str	r3, [sp, #12]
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 6
 
 
- 116 0036 019B     		ldr	r3, [sp, #4]
- 117              	.LBE5:
- 116:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /**USART1 GPIO Configuration    
- 117:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA9     ------> USART1_TX
- 118:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA10     ------> USART1_RX 
- 119:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     */
- 120:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Pin = GPIO_PIN_9;
- 118              		.loc 1 120 0
- 119 0038 4FF40073 		mov	r3, #512
- 120 003c 0293     		str	r3, [sp, #8]
- 121:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 121              		.loc 1 121 0
- 122 003e 0223     		movs	r3, #2
- 123 0040 0393     		str	r3, [sp, #12]
- 122:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
- 124              		.loc 1 122 0
- 125 0042 0323     		movs	r3, #3
- 126 0044 0593     		str	r3, [sp, #20]
- 123:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
- 127              		.loc 1 123 0
- 128 0046 114C     		ldr	r4, .L12+4
- 129 0048 02A9     		add	r1, sp, #8
- 130 004a 2046     		mov	r0, r4
- 131              	.LVL5:
- 132 004c FFF7FEFF 		bl	HAL_GPIO_Init
- 133              	.LVL6:
- 124:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 125:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Pin = GPIO_PIN_10;
- 134              		.loc 1 125 0
- 135 0050 4FF48063 		mov	r3, #1024
- 136 0054 0293     		str	r3, [sp, #8]
- 126:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
- 137              		.loc 1 126 0
- 138 0056 0026     		movs	r6, #0
- 139 0058 0396     		str	r6, [sp, #12]
- 127:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
- 140              		.loc 1 127 0
- 141 005a 0496     		str	r6, [sp, #16]
- 128:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
- 142              		.loc 1 128 0
- 143 005c 02A9     		add	r1, sp, #8
- 144 005e 2046     		mov	r0, r4
- 145 0060 FFF7FEFF 		bl	HAL_GPIO_Init
- 146              	.LVL7:
- 129:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 130:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1 DMA Init */
- 131:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1_RX Init */
- 132:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Instance = DMA1_Channel5;
- 147              		.loc 1 132 0
- 148 0064 0A4C     		ldr	r4, .L12+8
- 149 0066 0B4B     		ldr	r3, .L12+12
- 150 0068 2360     		str	r3, [r4]
- 133:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
- 151              		.loc 1 133 0
- 152 006a 6660     		str	r6, [r4, #4]
- 134:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.PeriphInc = DMA_PINC_DISABLE;
- 153              		.loc 1 134 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 6
-
-
- 154 006c A660     		str	r6, [r4, #8]
- 135:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.MemInc = DMA_MINC_ENABLE;
- 155              		.loc 1 135 0
- 156 006e 8023     		movs	r3, #128
- 157 0070 E360     		str	r3, [r4, #12]
- 136:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
- 158              		.loc 1 136 0
- 159 0072 2661     		str	r6, [r4, #16]
- 137:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
- 160              		.loc 1 137 0
- 161 0074 6661     		str	r6, [r4, #20]
- 138:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.Mode = DMA_NORMAL;
- 162              		.loc 1 138 0
- 163 0076 A661     		str	r6, [r4, #24]
- 139:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.Priority = DMA_PRIORITY_LOW;
- 164              		.loc 1 139 0
- 165 0078 E661     		str	r6, [r4, #28]
- 140:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     if (HAL_DMA_Init(&hdma_usart1_rx) != HAL_OK)
- 166              		.loc 1 140 0
- 167 007a 2046     		mov	r0, r4
- 168 007c FFF7FEFF 		bl	HAL_DMA_Init
- 169              	.LVL8:
- 141:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     {
- 142:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****       //_Error_Handler(__FILE__, __LINE__);
- 143:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     }
- 144:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 145:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_LINKDMA(uartHandle, hdmarx, hdma_usart1_rx);
- 170              		.loc 1 145 0
- 171 0080 6C63     		str	r4, [r5, #52]
- 172 0082 6562     		str	r5, [r4, #36]
- 173              	.LBE3:
- 174              	.LBE6:
- 146:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 147:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspInit 1 */
- 148:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 149:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspInit 1 */
- 150:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
- 151:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
- 175              		.loc 1 151 0
- 176 0084 06B0     		add	sp, sp, #24
- 177              	.LCFI3:
- 178              		.cfi_def_cfa_offset 16
- 179              		@ sp needed
- 180 0086 70BD     		pop	{r4, r5, r6, pc}
+ 117:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 174              		.loc 1 117 0
+ 175 0042 0323     		movs	r3, #3
+ 176 0044 0593     		str	r3, [sp, #20]
+ 118:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+ 177              		.loc 1 118 0
+ 178 0046 114C     		ldr	r4, .L16+4
+ 179 0048 02A9     		add	r1, sp, #8
+ 180 004a 2046     		mov	r0, r4
  181              	.LVL9:
- 182              	.L13:
- 183              		.align	2
- 184              	.L12:
- 185 0088 00380140 		.word	1073821696
- 186 008c 00080140 		.word	1073809408
- 187 0090 00000000 		.word	.LANCHOR1
- 188 0094 58000240 		.word	1073872984
- 189              		.cfi_endproc
- 190              	.LFE66:
- 191              		.fnend
- 193              		.section	.text.HAL_UART_MspDeInit,"ax",%progbits
- 194              		.align	1
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 7
+ 182 004c FFF7FEFF 		bl	HAL_GPIO_Init
+ 183              	.LVL10:
+ 119:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 120:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Pin = GPIO_PIN_10;
+ 184              		.loc 1 120 0
+ 185 0050 4FF48063 		mov	r3, #1024
+ 186 0054 0293     		str	r3, [sp, #8]
+ 121:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+ 187              		.loc 1 121 0
+ 188 0056 0026     		movs	r6, #0
+ 189 0058 0396     		str	r6, [sp, #12]
+ 122:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 190              		.loc 1 122 0
+ 191 005a 0496     		str	r6, [sp, #16]
+ 123:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+ 192              		.loc 1 123 0
+ 193 005c 02A9     		add	r1, sp, #8
+ 194 005e 2046     		mov	r0, r4
+ 195 0060 FFF7FEFF 		bl	HAL_GPIO_Init
+ 196              	.LVL11:
+ 124:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 125:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1 DMA Init */
+ 126:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1_RX Init */
+ 127:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Instance = DMA1_Channel5;
+ 197              		.loc 1 127 0
+ 198 0064 0A4C     		ldr	r4, .L16+8
+ 199 0066 0B4B     		ldr	r3, .L16+12
+ 200 0068 2360     		str	r3, [r4]
+ 128:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+ 201              		.loc 1 128 0
+ 202 006a 6660     		str	r6, [r4, #4]
+ 129:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+ 203              		.loc 1 129 0
+ 204 006c A660     		str	r6, [r4, #8]
+ 130:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.MemInc = DMA_MINC_ENABLE;
+ 205              		.loc 1 130 0
+ 206 006e 8023     		movs	r3, #128
+ 207 0070 E360     		str	r3, [r4, #12]
+ 131:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+ 208              		.loc 1 131 0
+ 209 0072 2661     		str	r6, [r4, #16]
+ 132:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+ 210              		.loc 1 132 0
+ 211 0074 6661     		str	r6, [r4, #20]
+ 133:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.Mode = DMA_NORMAL;
+ 212              		.loc 1 133 0
+ 213 0076 A661     		str	r6, [r4, #24]
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 7
 
 
- 195              		.global	HAL_UART_MspDeInit
- 196              		.syntax unified
- 197              		.thumb
- 198              		.thumb_func
- 199              		.fpu softvfp
- 201              	HAL_UART_MspDeInit:
- 202              		.fnstart
- 203              	.LFB67:
- 152:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 153:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void HAL_UART_MspDeInit(UART_HandleTypeDef *uartHandle)
- 154:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
- 204              		.loc 1 154 0
- 205              		.cfi_startproc
- 206              		@ args = 0, pretend = 0, frame = 0
- 207              		@ frame_needed = 0, uses_anonymous_args = 0
- 208              	.LVL10:
- 155:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 156:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (uartHandle->Instance == USART1)
- 209              		.loc 1 156 0
- 210 0000 0268     		ldr	r2, [r0]
- 211 0002 0A4B     		ldr	r3, .L21
- 212 0004 9A42     		cmp	r2, r3
- 213 0006 00D0     		beq	.L20
- 214 0008 7047     		bx	lr
- 215              	.L20:
+ 134:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     hdma_usart1_rx.Init.Priority = DMA_PRIORITY_LOW;
+ 214              		.loc 1 134 0
+ 215 0078 E661     		str	r6, [r4, #28]
+ 135:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     if (HAL_DMA_Init(&hdma_usart1_rx) != HAL_OK)
+ 216              		.loc 1 135 0
+ 217 007a 2046     		mov	r0, r4
+ 218 007c FFF7FEFF 		bl	HAL_DMA_Init
+ 219              	.LVL12:
+ 136:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     {
+ 137:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****       //_Error_Handler(__FILE__, __LINE__);
+ 138:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     }
+ 139:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 140:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_LINKDMA(uartHandle, hdmarx, hdma_usart1_rx);
+ 220              		.loc 1 140 0
+ 221 0080 6C63     		str	r4, [r5, #52]
+ 222 0082 6562     		str	r5, [r4, #36]
+ 223              	.LBE3:
+ 224              	.LBE6:
+ 141:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 142:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspInit 1 */
+ 143:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 144:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspInit 1 */
+ 145:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
+ 146:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
+ 225              		.loc 1 146 0
+ 226 0084 06B0     		add	sp, sp, #24
+ 227              	.LCFI6:
+ 228              		.cfi_def_cfa_offset 16
+ 229              		@ sp needed
+ 230 0086 70BD     		pop	{r4, r5, r6, pc}
+ 231              	.LVL13:
+ 232              	.L17:
+ 233              		.align	2
+ 234              	.L16:
+ 235 0088 00380140 		.word	1073821696
+ 236 008c 00080140 		.word	1073809408
+ 237 0090 00000000 		.word	.LANCHOR1
+ 238 0094 58000240 		.word	1073872984
+ 239              		.cfi_endproc
+ 240              	.LFE67:
+ 241              		.fnend
+ 243              		.section	.text.HAL_UART_MspDeInit,"ax",%progbits
+ 244              		.align	1
+ 245              		.global	HAL_UART_MspDeInit
+ 246              		.syntax unified
+ 247              		.thumb
+ 248              		.thumb_func
+ 249              		.fpu softvfp
+ 251              	HAL_UART_MspDeInit:
+ 252              		.fnstart
+ 253              	.LFB68:
+ 147:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 148:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void HAL_UART_MspDeInit(UART_HandleTypeDef *uartHandle)
+ 149:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
+ 254              		.loc 1 149 0
+ 255              		.cfi_startproc
+ 256              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 8
+
+
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258              	.LVL14:
+ 150:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 151:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (uartHandle->Instance == USART1)
+ 259              		.loc 1 151 0
+ 260 0000 0268     		ldr	r2, [r0]
+ 261 0002 0A4B     		ldr	r3, .L25
+ 262 0004 9A42     		cmp	r2, r3
+ 263 0006 00D0     		beq	.L24
+ 264 0008 7047     		bx	lr
+ 265              	.L24:
+ 149:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 266              		.loc 1 149 0
+ 267 000a 10B5     		push	{r4, lr}
+ 268              		.save {r4, lr}
+ 269              	.LCFI7:
+ 270              		.cfi_def_cfa_offset 8
+ 271              		.cfi_offset 4, -8
+ 272              		.cfi_offset 14, -4
+ 273 000c 0446     		mov	r4, r0
+ 152:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
+ 153:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspDeInit 0 */
  154:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 216              		.loc 1 154 0
- 217 000a 10B5     		push	{r4, lr}
- 218              		.save {r4, lr}
- 219              	.LCFI4:
- 220              		.cfi_def_cfa_offset 8
- 221              		.cfi_offset 4, -8
- 222              		.cfi_offset 14, -4
- 223 000c 0446     		mov	r4, r0
- 157:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
- 158:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspDeInit 0 */
- 159:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 160:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspDeInit 0 */
- 161:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* Peripheral clock disable */
- 162:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_RCC_USART1_CLK_DISABLE();
- 224              		.loc 1 162 0
- 225 000e 084A     		ldr	r2, .L21+4
- 226 0010 9369     		ldr	r3, [r2, #24]
- 227 0012 23F48043 		bic	r3, r3, #16384
- 228 0016 9361     		str	r3, [r2, #24]
- 163:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 164:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /**USART1 GPIO Configuration    
- 165:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA9     ------> USART1_TX
- 166:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA10     ------> USART1_RX 
- 167:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     */
- 168:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9 | GPIO_PIN_10);
- 229              		.loc 1 168 0
- 230 0018 4FF4C061 		mov	r1, #1536
- 231 001c 0548     		ldr	r0, .L21+8
- 232              	.LVL11:
- 233 001e FFF7FEFF 		bl	HAL_GPIO_DeInit
- 234              	.LVL12:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 8
+ 155:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspDeInit 0 */
+ 156:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* Peripheral clock disable */
+ 157:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     __HAL_RCC_USART1_CLK_DISABLE();
+ 274              		.loc 1 157 0
+ 275 000e 084A     		ldr	r2, .L25+4
+ 276 0010 9369     		ldr	r3, [r2, #24]
+ 277 0012 23F48043 		bic	r3, r3, #16384
+ 278 0016 9361     		str	r3, [r2, #24]
+ 158:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 159:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /**USART1 GPIO Configuration    
+ 160:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA9     ------> USART1_TX
+ 161:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     PA10     ------> USART1_RX 
+ 162:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     */
+ 163:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9 | GPIO_PIN_10);
+ 279              		.loc 1 163 0
+ 280 0018 4FF4C061 		mov	r1, #1536
+ 281 001c 0548     		ldr	r0, .L25+8
+ 282              	.LVL15:
+ 283 001e FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 284              	.LVL16:
+ 164:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 165:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1 DMA DeInit */
+ 166:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_DMA_DeInit(uartHandle->hdmarx);
+ 285              		.loc 1 166 0
+ 286 0022 606B     		ldr	r0, [r4, #52]
+ 287 0024 FFF7FEFF 		bl	HAL_DMA_DeInit
+ 288              	.LVL17:
+ 167:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspDeInit 1 */
+ 168:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 169:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspDeInit 1 */
+ 170:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
+ 171:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
+ 289              		.loc 1 171 0
+ 290 0028 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 9
 
 
- 169:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 170:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USART1 DMA DeInit */
- 171:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     HAL_DMA_DeInit(uartHandle->hdmarx);
- 235              		.loc 1 171 0
- 236 0022 606B     		ldr	r0, [r4, #52]
- 237 0024 FFF7FEFF 		bl	HAL_DMA_DeInit
- 238              	.LVL13:
- 172:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE BEGIN USART1_MspDeInit 1 */
- 173:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 174:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****     /* USER CODE END USART1_MspDeInit 1 */
- 175:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   }
- 176:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
- 239              		.loc 1 176 0
- 240 0028 10BD     		pop	{r4, pc}
- 241              	.LVL14:
- 242              	.L22:
- 243 002a 00BF     		.align	2
- 244              	.L21:
- 245 002c 00380140 		.word	1073821696
- 246 0030 00100240 		.word	1073876992
- 247 0034 00080140 		.word	1073809408
- 248              		.cfi_endproc
- 249              	.LFE67:
- 250              		.fnend
- 252              		.section	.text.MX_UART_DMA_Init,"ax",%progbits
- 253              		.align	1
- 254              		.global	MX_UART_DMA_Init
- 255              		.syntax unified
- 256              		.thumb
- 257              		.thumb_func
- 258              		.fpu softvfp
- 260              	MX_UART_DMA_Init:
- 261              		.fnstart
- 262              	.LFB68:
+ 291              	.LVL18:
+ 292              	.L26:
+ 293 002a 00BF     		.align	2
+ 294              	.L25:
+ 295 002c 00380140 		.word	1073821696
+ 296 0030 00100240 		.word	1073876992
+ 297 0034 00080140 		.word	1073809408
+ 298              		.cfi_endproc
+ 299              	.LFE68:
+ 300              		.fnend
+ 302              		.section	.text.MX_UART_DMA_Init,"ax",%progbits
+ 303              		.align	1
+ 304              		.global	MX_UART_DMA_Init
+ 305              		.syntax unified
+ 306              		.thumb
+ 307              		.thumb_func
+ 308              		.fpu softvfp
+ 310              	MX_UART_DMA_Init:
+ 311              		.fnstart
+ 312              	.LFB69:
+ 172:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 173:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void MX_UART_DMA_Init(void)
+ 174:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
+ 313              		.loc 1 174 0
+ 314              		.cfi_startproc
+ 315              		@ args = 0, pretend = 0, frame = 8
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 317 0000 00B5     		push	{lr}
+ 318              		.save {lr}
+ 319              	.LCFI8:
+ 320              		.cfi_def_cfa_offset 4
+ 321              		.cfi_offset 14, -4
+ 322              		.pad #12
+ 323 0002 83B0     		sub	sp, sp, #12
+ 324              	.LCFI9:
+ 325              		.cfi_def_cfa_offset 16
+ 326              	.LBB7:
+ 175:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   /* DMA controller clock enable */
+ 176:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   __HAL_RCC_DMA1_CLK_ENABLE();
+ 327              		.loc 1 176 0
+ 328 0004 0A4B     		ldr	r3, .L29
+ 329 0006 5A69     		ldr	r2, [r3, #20]
+ 330 0008 42F00102 		orr	r2, r2, #1
+ 331 000c 5A61     		str	r2, [r3, #20]
+ 332 000e 5B69     		ldr	r3, [r3, #20]
+ 333 0010 03F00103 		and	r3, r3, #1
+ 334 0014 0193     		str	r3, [sp, #4]
+ 335 0016 019B     		ldr	r3, [sp, #4]
+ 336              	.LBE7:
  177:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 178:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** void MX_UART_DMA_Init(void)
- 179:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** {
- 263              		.loc 1 179 0
- 264              		.cfi_startproc
- 265              		@ args = 0, pretend = 0, frame = 8
- 266              		@ frame_needed = 0, uses_anonymous_args = 0
- 267 0000 00B5     		push	{lr}
- 268              		.save {lr}
- 269              	.LCFI5:
- 270              		.cfi_def_cfa_offset 4
- 271              		.cfi_offset 14, -4
- 272              		.pad #12
- 273 0002 83B0     		sub	sp, sp, #12
- 274              	.LCFI6:
- 275              		.cfi_def_cfa_offset 16
- 276              	.LBB7:
- 180:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   /* DMA controller clock enable */
- 181:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   __HAL_RCC_DMA1_CLK_ENABLE();
- 277              		.loc 1 181 0
- 278 0004 0A4B     		ldr	r3, .L25
- 279 0006 5A69     		ldr	r2, [r3, #20]
- 280 0008 42F00102 		orr	r2, r2, #1
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 9
+ 178:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   /* DMA interrupt init */
+ 179:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   /* DMA1_Channel5_IRQn interrupt configuration */
+ 180:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
+ 337              		.loc 1 180 0
+ 338 0018 0022     		movs	r2, #0
+ 339 001a 1146     		mov	r1, r2
+ 340 001c 0F20     		movs	r0, #15
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 10
 
 
- 281 000c 5A61     		str	r2, [r3, #20]
- 282 000e 5B69     		ldr	r3, [r3, #20]
- 283 0010 03F00103 		and	r3, r3, #1
- 284 0014 0193     		str	r3, [sp, #4]
- 285 0016 019B     		ldr	r3, [sp, #4]
- 286              	.LBE7:
- 182:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 183:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   /* DMA interrupt init */
- 184:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   /* DMA1_Channel5_IRQn interrupt configuration */
- 185:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
- 287              		.loc 1 185 0
- 288 0018 0022     		movs	r2, #0
- 289 001a 1146     		mov	r1, r2
- 290 001c 0F20     		movs	r0, #15
- 291 001e FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 292              	.LVL15:
- 186:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
- 293              		.loc 1 186 0
- 294 0022 0F20     		movs	r0, #15
- 295 0024 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
- 296              	.LVL16:
- 187:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
- 297              		.loc 1 187 0
- 298 0028 03B0     		add	sp, sp, #12
- 299              	.LCFI7:
- 300              		.cfi_def_cfa_offset 4
- 301              		@ sp needed
- 302 002a 5DF804FB 		ldr	pc, [sp], #4
- 303              	.L26:
- 304 002e 00BF     		.align	2
- 305              	.L25:
- 306 0030 00100240 		.word	1073876992
- 307              		.cfi_endproc
- 308              	.LFE68:
- 309              		.fnend
- 311              		.section	.text.MX_USART1_UART_Init,"ax",%progbits
- 312              		.align	1
- 313              		.global	MX_USART1_UART_Init
- 314              		.syntax unified
- 315              		.thumb
- 316              		.thumb_func
- 317              		.fpu softvfp
- 319              	MX_USART1_UART_Init:
- 320              		.fnstart
- 321              	.LFB65:
-  88:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   MX_UART_DMA_Init();
- 322              		.loc 1 88 0
- 323              		.cfi_startproc
- 324              		@ args = 0, pretend = 0, frame = 0
- 325              		@ frame_needed = 0, uses_anonymous_args = 0
- 326              	.LVL17:
- 327 0000 10B5     		push	{r4, lr}
- 328              		.save {r4, lr}
- 329              	.LCFI8:
- 330              		.cfi_def_cfa_offset 8
- 331              		.cfi_offset 4, -8
- 332              		.cfi_offset 14, -4
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 10
+ 341 001e FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 342              	.LVL19:
+ 181:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
+ 343              		.loc 1 181 0
+ 344 0022 0F20     		movs	r0, #15
+ 345 0024 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 346              	.LVL20:
+ 182:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** }
+ 347              		.loc 1 182 0
+ 348 0028 03B0     		add	sp, sp, #12
+ 349              	.LCFI10:
+ 350              		.cfi_def_cfa_offset 4
+ 351              		@ sp needed
+ 352 002a 5DF804FB 		ldr	pc, [sp], #4
+ 353              	.L30:
+ 354 002e 00BF     		.align	2
+ 355              	.L29:
+ 356 0030 00100240 		.word	1073876992
+ 357              		.cfi_endproc
+ 358              	.LFE69:
+ 359              		.fnend
+ 361              		.section	.text.MX_USART1_UART_Init,"ax",%progbits
+ 362              		.align	1
+ 363              		.global	MX_USART1_UART_Init
+ 364              		.syntax unified
+ 365              		.thumb
+ 366              		.thumb_func
+ 367              		.fpu softvfp
+ 369              	MX_USART1_UART_Init:
+ 370              		.fnstart
+ 371              	.LFB66:
+  83:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   MX_UART_DMA_Init();
+ 372              		.loc 1 83 0
+ 373              		.cfi_startproc
+ 374              		@ args = 0, pretend = 0, frame = 0
+ 375              		@ frame_needed = 0, uses_anonymous_args = 0
+ 376              	.LVL21:
+ 377 0000 10B5     		push	{r4, lr}
+ 378              		.save {r4, lr}
+ 379              	.LCFI11:
+ 380              		.cfi_def_cfa_offset 8
+ 381              		.cfi_offset 4, -8
+ 382              		.cfi_offset 14, -4
+ 383 0002 0446     		mov	r4, r0
+  84:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Instance = USART1;
+ 384              		.loc 1 84 0
+ 385 0004 FFF7FEFF 		bl	MX_UART_DMA_Init
+ 386              	.LVL22:
+  85:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.BaudRate = baudRate;
+ 387              		.loc 1 85 0
+ 388 0008 0748     		ldr	r0, .L33
+ 389 000a 084B     		ldr	r3, .L33+4
+ 390 000c 0360     		str	r3, [r0]
+  86:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+ 391              		.loc 1 86 0
+ 392 000e 4460     		str	r4, [r0, #4]
+  87:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.StopBits = UART_STOPBITS_1;
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 11
 
 
- 333 0002 0446     		mov	r4, r0
-  89:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Instance = USART1;
- 334              		.loc 1 89 0
- 335 0004 FFF7FEFF 		bl	MX_UART_DMA_Init
- 336              	.LVL18:
-  90:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.BaudRate = baudRate;
- 337              		.loc 1 90 0
- 338 0008 0748     		ldr	r0, .L29
- 339 000a 084B     		ldr	r3, .L29+4
- 340 000c 0360     		str	r3, [r0]
-  91:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.WordLength = UART_WORDLENGTH_8B;
- 341              		.loc 1 91 0
- 342 000e 4460     		str	r4, [r0, #4]
-  92:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.StopBits = UART_STOPBITS_1;
- 343              		.loc 1 92 0
- 344 0010 0023     		movs	r3, #0
- 345 0012 8360     		str	r3, [r0, #8]
-  93:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Parity = UART_PARITY_NONE;
- 346              		.loc 1 93 0
- 347 0014 C360     		str	r3, [r0, #12]
-  94:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Mode = UART_MODE_TX_RX;
- 348              		.loc 1 94 0
- 349 0016 0361     		str	r3, [r0, #16]
-  95:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
- 350              		.loc 1 95 0
- 351 0018 0C22     		movs	r2, #12
- 352 001a 4261     		str	r2, [r0, #20]
-  96:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
- 353              		.loc 1 96 0
- 354 001c 8361     		str	r3, [r0, #24]
-  97:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (HAL_UART_Init(&huart1) != HAL_OK)
- 355              		.loc 1 97 0
- 356 001e C361     		str	r3, [r0, #28]
-  98:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
- 357              		.loc 1 98 0
- 358 0020 FFF7FEFF 		bl	HAL_UART_Init
- 359              	.LVL19:
- 102:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
- 360              		.loc 1 102 0
- 361 0024 10BD     		pop	{r4, pc}
- 362              	.LVL20:
- 363              	.L30:
- 364 0026 00BF     		.align	2
- 365              	.L29:
- 366 0028 00000000 		.word	.LANCHOR0
- 367 002c 00380140 		.word	1073821696
- 368              		.cfi_endproc
- 369              	.LFE65:
- 370              		.fnend
- 372              		.global	hdma_usart1_rx
- 373              		.global	huart1
- 374              		.section	.bss.hdma_usart1_rx,"aw",%nobits
- 375              		.align	2
- 376              		.set	.LANCHOR1,. + 0
- 379              	hdma_usart1_rx:
- 380 0000 00000000 		.space	68
- 380      00000000 
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 11
+ 393              		.loc 1 87 0
+ 394 0010 0023     		movs	r3, #0
+ 395 0012 8360     		str	r3, [r0, #8]
+  88:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Parity = UART_PARITY_NONE;
+ 396              		.loc 1 88 0
+ 397 0014 C360     		str	r3, [r0, #12]
+  89:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.Mode = UART_MODE_TX_RX;
+ 398              		.loc 1 89 0
+ 399 0016 0361     		str	r3, [r0, #16]
+  90:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+ 400              		.loc 1 90 0
+ 401 0018 0C22     		movs	r2, #12
+ 402 001a 4261     		str	r2, [r0, #20]
+  91:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+ 403              		.loc 1 91 0
+ 404 001c 8361     		str	r3, [r0, #24]
+  92:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   if (HAL_UART_Init(&huart1) != HAL_OK)
+ 405              		.loc 1 92 0
+ 406 001e C361     		str	r3, [r0, #28]
+  93:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c ****   {
+ 407              		.loc 1 93 0
+ 408 0020 FFF7FEFF 		bl	HAL_UART_Init
+ 409              	.LVL23:
+  97:E:/VisualStudioCode/STM32F1_HAL/Src\usart.c **** 
+ 410              		.loc 1 97 0
+ 411 0024 10BD     		pop	{r4, pc}
+ 412              	.LVL24:
+ 413              	.L34:
+ 414 0026 00BF     		.align	2
+ 415              	.L33:
+ 416 0028 00000000 		.word	.LANCHOR0
+ 417 002c 00380140 		.word	1073821696
+ 418              		.cfi_endproc
+ 419              	.LFE66:
+ 420              		.fnend
+ 422              		.global	hdma_usart1_rx
+ 423              		.global	huart1
+ 424              		.section	.bss.hdma_usart1_rx,"aw",%nobits
+ 425              		.align	2
+ 426              		.set	.LANCHOR1,. + 0
+ 429              	hdma_usart1_rx:
+ 430 0000 00000000 		.space	68
+ 430      00000000 
+ 430      00000000 
+ 430      00000000 
+ 430      00000000 
+ 431              		.section	.bss.huart1,"aw",%nobits
+ 432              		.align	2
+ 433              		.set	.LANCHOR0,. + 0
+ 436              	huart1:
+ 437 0000 00000000 		.space	64
+ 437      00000000 
+ 437      00000000 
+ 437      00000000 
+ 437      00000000 
+ 438              		.text
+ 439              	.Letext0:
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 12
 
 
- 380      00000000 
- 380      00000000 
- 380      00000000 
- 381              		.section	.bss.huart1,"aw",%nobits
- 382              		.align	2
- 383              		.set	.LANCHOR0,. + 0
- 386              	huart1:
- 387 0000 00000000 		.space	64
- 387      00000000 
- 387      00000000 
- 387      00000000 
- 387      00000000 
- 388              		.text
- 389              	.Letext0:
- 390              		.file 2 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 391              		.file 3 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\machine\\_default_types.
- 392              		.file 4 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\_stdint.h"
- 393              		.file 5 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Include/core_cm3.h"
- 394              		.file 6 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1x
- 395              		.file 7 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
- 396              		.file 8 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\lock.h"
- 397              		.file 9 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\_types.h"
- 398              		.file 10 "e:\\visualstudiocode\\gcc-arm-none-eabi\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\stddef
- 399              		.file 11 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\reent.h"
- 400              		.file 12 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 401              		.file 13 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 402              		.file 14 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 403              		.file 15 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 404              		.file 16 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 405              		.file 17 "E:/VisualStudioCode/STM32F1_HAL/Src/Inc/usart.h"
- 406              		.file 18 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s 			page 12
+ 440              		.file 2 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 441              		.file 3 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\machine\\_default_types.
+ 442              		.file 4 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 443              		.file 5 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Include/core_cm3.h"
+ 444              		.file 6 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1x
+ 445              		.file 7 "E:/VisualStudioCode/STM32F1_HAL/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 446              		.file 8 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\lock.h"
+ 447              		.file 9 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\_types.h"
+ 448              		.file 10 "e:\\visualstudiocode\\gcc-arm-none-eabi\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\stddef
+ 449              		.file 11 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\sys\\reent.h"
+ 450              		.file 12 "e:\\visualstudiocode\\gcc-arm-none-eabi\\arm-none-eabi\\include\\stdio.h"
+ 451              		.file 13 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 452              		.file 14 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 453              		.file 15 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 454              		.file 16 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 455              		.file 17 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 456              		.file 18 "E:/VisualStudioCode/STM32F1_HAL/Src/Inc/usart.h"
+ 457              		.file 19 "E:/VisualStudioCode/STM32F1_HAL/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usart.c
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:16     .text._write:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:23     .text._write:00000000 _write
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:51     .text._write:00000010 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:16     .text._write:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:23     .text._write:00000000 _write
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:51     .text._write:00000010 $d
            .ARM.extab.text._write:00000000 $d
            .ARM.exidx.text._write:00000000 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:57     .text.HAL_UART_MspInit:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:64     .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:185    .text.HAL_UART_MspInit:00000088 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:57     .text.fputc:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:64     .text.fputc:00000000 fputc
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:101    .text.fputc:00000020 $d
+            .ARM.exidx.text.fputc:00000000 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:107    .text.HAL_UART_MspInit:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:114    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:235    .text.HAL_UART_MspInit:00000088 $d
  .ARM.exidx.text.HAL_UART_MspInit:00000000 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:194    .text.HAL_UART_MspDeInit:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:201    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:245    .text.HAL_UART_MspDeInit:0000002c $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:244    .text.HAL_UART_MspDeInit:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:251    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:295    .text.HAL_UART_MspDeInit:0000002c $d
 .ARM.exidx.text.HAL_UART_MspDeInit:00000000 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:253    .text.MX_UART_DMA_Init:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:260    .text.MX_UART_DMA_Init:00000000 MX_UART_DMA_Init
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:306    .text.MX_UART_DMA_Init:00000030 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:303    .text.MX_UART_DMA_Init:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:310    .text.MX_UART_DMA_Init:00000000 MX_UART_DMA_Init
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:356    .text.MX_UART_DMA_Init:00000030 $d
  .ARM.exidx.text.MX_UART_DMA_Init:00000000 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:312    .text.MX_USART1_UART_Init:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:319    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:366    .text.MX_USART1_UART_Init:00000028 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:362    .text.MX_USART1_UART_Init:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:369    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:416    .text.MX_USART1_UART_Init:00000028 $d
 .ARM.exidx.text.MX_USART1_UART_Init:00000000 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:379    .bss.hdma_usart1_rx:00000000 hdma_usart1_rx
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:386    .bss.huart1:00000000 huart1
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:375    .bss.hdma_usart1_rx:00000000 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\cc9wtNxc.s:382    .bss.huart1:00000000 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:429    .bss.hdma_usart1_rx:00000000 hdma_usart1_rx
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:436    .bss.huart1:00000000 huart1
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:425    .bss.hdma_usart1_rx:00000000 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyjFKKg.s:432    .bss.huart1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Transmit
 __aeabi_unwind_cpp_pr1
+__aeabi_unwind_cpp_pr0
 HAL_GPIO_Init
 HAL_DMA_Init
-__aeabi_unwind_cpp_pr0
 HAL_GPIO_DeInit
 HAL_DMA_DeInit
 HAL_NVIC_SetPriority
